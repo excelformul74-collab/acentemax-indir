@@ -38,7 +38,9 @@
   <p class="wa">Yardım: <a href="https://wa.me/905438120980">WhatsApp 0543 812 09 80</a></p>
 </div>
 <script>
-  setTimeout(function () { location.href = document.getElementById('indir').href; document.getElementById('durum').textContent = 'İndirme başladı. Tarayıcınızın indirilenler bölümüne bakın.'; }, 600);
+  // Adres #onizle ile açılırsa (sayfayı görmek için) indirme kendiliğinden başlamaz.
+  if (location.hash === '#onizle') document.getElementById('durum').textContent = 'Önizleme: indirmek için düğmeye basın.';
+  else setTimeout(function () { location.href = document.getElementById('indir').href; document.getElementById('durum').textContent = 'İndirme başladı. Tarayıcınızın indirilenler bölümüne bakın.'; }, 600);
 </script>
 </body>
 </html>
